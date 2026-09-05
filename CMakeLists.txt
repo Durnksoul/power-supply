@@ -45,6 +45,10 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
+    Core/Src/lcd_ili9341.c
+    Core/Src/display_app.c
+    Core/Src/ui_power.c
+    Core/Src/ui_font_zh_16.c
 )
 
 # Add include paths
@@ -66,3 +70,6 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 
     # Add user defined libraries
 )
+
+include(cmake/lvgl.cmake)
+target_link_libraries(${CMAKE_PROJECT_NAME} lvgl)
